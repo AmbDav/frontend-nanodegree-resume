@@ -68,14 +68,16 @@ var work = {
 		"title": "Project Manager",
 		"dates": "Nov 2016-Present",
 		"location": "Palatka,FL",
-		"description": "Creating web based projects for use in social work."
+		"description": "Creating web based projects for use in social work.",
+		"url":"http://www.deusdatsolutions.com"
 		},
 		{
 		"employer": "Hospice",
 		"title": "Social Worker",
 		"dates": "Sept 2013-Nov 2016",
 		"location": "Palatka, FL",
-		"description": "Provide emotional and legal support to people at the end of life."
+		"description": "Provide emotional and legal support to people at the end of life.",
+		"url": "http://www.hospiceofcitrus.org"
 		}
 	]
 };
@@ -86,14 +88,17 @@ var work = {
 work.display = function(job) {
 	$("#workExperience").append(HTMLworkStart);
 
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer)
+								.replace("#", job.url);
 	var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
 	var formattedDates = HTMLworkDates.replace("%data%", job.dates);
 	var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
 
+
 	$(".work-entry:last").append(formattedEmployer + formattedTitle);
 	$(".work-entry:last").append(formattedDates);
 	$(".work-entry:last").append(formattedDescription);
+
 }
 
 // for(i = 0; i < work.jobs.length; i++) {
@@ -131,7 +136,7 @@ projects.display = function(project) {
 		
 		var showimage = function(image){
 			var formattedImage = HTMLprojectImage.replace("%data%", image);
-			$(".project-entry:last").append(formattedImage);
+			$(".project-entry:last").prepend(formattedImage);
 		};
 		project.image.forEach(showimage);
 }
@@ -147,13 +152,15 @@ var education = {
 			"degree": "BS",
 			"major": ["Social Work"],
 			"dates": "Feb 2002-May 2006",
+			"url": "http://www.tayloru.edu"
 		},
 		{
 			"name": "IUPUI",
 			"location": "Indianapolis, IN",
 			"degree": "Masters",
 			"major": ["Social Work"],
-			"dates": "Aug 2008-May 2011"
+			"dates": "Aug 2008-May 2011",
+			"url": "https://www.iupui.edu"
 		}
 	],
 	"onlineCourses": [
@@ -169,7 +176,8 @@ var education = {
 education.display_school = function(school) {
 	$("#education").append(HTMLschoolStart);
 	
-	var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+	var formattedSchoolName = HTMLschoolName.replace("%data%", school.name)
+									.replace("#", school.url);
 	var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
 	$(".education-entry:last").append(formattedSchoolName + formattedDegree);
 
@@ -242,5 +250,5 @@ $("#main").append(internationalizeButton);
 
 //$("#mapDiv").append(googleMap);
 //The map function was not working. It either showed nothing or gave errors that broke the who page. 
-//People who know more than me discovered that the HTML in reading the helper.js file was not seeing
+//People who know more than me said they believe that the browser is reading the helper.js file and is not seeing
 //the appendage and moving on. The map has been moved to the HTML page.

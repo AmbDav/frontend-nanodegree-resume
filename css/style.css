@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #23e8f5;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #555;
   line-height: 29px;
   padding: 10px;
 }
@@ -42,7 +42,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #777;
   line-height: 22px;
 }
 
@@ -67,7 +67,6 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
 }
 
 .location-text {
@@ -76,7 +75,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -86,7 +84,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #9a11c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,7 +98,7 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #23e8f5;
   display: none;
 }
 
@@ -109,7 +107,7 @@ a {
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #23e8f5;
 }
 
 .white-text {
@@ -172,7 +170,13 @@ span {
 }
 
 #lets-connect {
-  text-align: center;
+  tex.replace("#", job.url)
+}
+
+/* Added Style */
+
+.projectimg {
+  float:left;
 }
 
 /* Media queries to handle various device widths */
