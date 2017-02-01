@@ -1,7 +1,7 @@
 var bio = {
     "name": "Amber Davenport",
     "role": "Project Manager",
-    "message": "Welcome to my resume",
+    "welcomeMessage": "Welcome to my resume",
     "contacts": {
         "mobile": "123-456-7890",
         "email": "loveit@gmail.com",
@@ -11,7 +11,7 @@ var bio = {
         "location": "Palatka, FL"
     },
     "skills": ["Social Work", "Crisis Management", "Web Development"],
-    "bioPic": "images/People300.jpg"
+    "biopic": "images/People300.jpg"
 };
 
 function display_contacts(contacts, location) {
@@ -32,10 +32,10 @@ function display_contacts(contacts, location) {
 
 bio.display = function() {
 
-    var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").prepend(formattedBiopic);
 
-    var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").prepend(formattedMessage);
 
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -114,7 +114,7 @@ var projects = {
         "title": "Portfolio",
         "dates": "Jan 2017",
         "description": "That is self explanatory!",
-        "image": ["images/placeimgarch.jpg"]
+        "images": ["images/placeimgarch.jpg"]
     }]
 };
 
@@ -133,7 +133,7 @@ projects.display = function(project) {
         var formattedImage = HTMLprojectImage.replace("%data%", image);
         $(".project-entry:last").prepend(formattedImage);
     };
-    project.image.forEach(showimage);
+    project.images.forEach(showimage);
 };
 projects.projects.forEach(projects.display);
 
@@ -144,7 +144,7 @@ var education = {
             "name": "Taylor University",
             "location": "Upland, IN",
             "degree": "BS",
-            "major": ["Social Work"],
+            "majors": ["Social Work"],
             "dates": "Feb 2002-May 2006",
             "url": "http://www.tayloru.edu"
         },
@@ -152,7 +152,7 @@ var education = {
             "name": "IUPUI",
             "location": "Indianapolis, IN",
             "degree": "Masters",
-            "major": ["Social Work"],
+            "majors": ["Social Work"],
             "dates": "Aug 2008-May 2011",
             "url": "https://www.iupui.edu"
         }
@@ -180,7 +180,7 @@ education.display_school = function(school) {
     var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
     $(".education-entry:last").append(formattedLocation);
 
-    var formattedMajor = HTMLschoolMajor.replace("%data%", school.major);
+    var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
     $(".education-entry:last").append(formattedMajor);
 };
 
